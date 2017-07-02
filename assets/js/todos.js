@@ -1,12 +1,22 @@
 //check off specific to-dos by clicking
-$('li').click(function(){
+$('ul').on("click", "li", function(){ 
+  //↑this means "when you CLICK on an LI inside a UN"
   $(this).toggleClass("completed");
 });
 
 //click on X to delete to-do
-$("span").click(function(event){
+$("ul").on("click", "span", function(event){
   $(this).parent().fadeOut(500, function(){
     $(this).remove();
-  }); //the parent of the span you clicked on is the li
-  event.stopPropagation();; //jQuery method that stops event bubbling
+  }); 
+  event.stopPropagation();; //stops event bubbling
 });
+
+$("input[type='text']").keypress(function(event){
+  //"which" is the character code. "13" is the enter key
+  if(event.which === 13){
+    var todoText = $(this).val();
+    $(this).val("");
+    $("ul").append("<li> <span> X </span>" + todoText + "</li>")
+  }
+})
