@@ -1,8 +1,11 @@
 body {
   font-family: 'Roboto', sans-serif;
+  background: #e96443; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #e96443, #904e95); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #e96443, #904e95); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-h1 { 
+h1 {
   background: blue;
   color: white;
   padding: .4em 1em;
@@ -53,4 +56,12 @@ input:focus{
 .completed {
   color: grey;
   text-decoration: line-through
+}
+
+.fa-plus-circle {
+  float: right;
+  transition: all .3s
+}
+.fa-plus-circle:hover {
+  transform: scale(1.2)
 }
