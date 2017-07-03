@@ -20,3 +20,7 @@ $("input[type='text']").keypress(function(event){
     $("ul").append("<li> <span> <i class='fa fa-trash'></i> </span>" + todoText + "</li>")
   }
 })
+
+$(".fa-plus-circle").click(function(){
+  $("input[type='text']").slideToggle(120, "linear")
+})
